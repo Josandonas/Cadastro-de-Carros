@@ -1,6 +1,8 @@
 <?php
+
+use Cake\Controller\Controller;
 $this->disableAutoLayout();
-$cakeDescription = 'CakePHP: the rapid development PHP framework';
+$cakeDescription = 'CakePHP: Incrível';
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +57,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         </nav>
     </header>
     <div class="container-fluid">
-        
+
+
     </div>
 
 </body>

@@ -107,7 +107,4 @@ class ModelosController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-    public function home(){
-        return $this->redirect(['controller' => 'Pages', 'action' => 'display']);
-    }
 }

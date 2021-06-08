@@ -5,7 +5,8 @@
  * @var \Cake\Datasource\EntityInterface[]|\Cake\Collection\CollectionInterface $cores
  */
 ?>
-<?= $this->Html->link(__('Voltar'), ['action' => 'home'], ['class' => 'button float-left']) ?>
+<a href="http://localhost/Carros/Usuario"><button class="button float-left">
+Voltar</button></a> 
 <br>
 <br>
 <div class="cores index content">

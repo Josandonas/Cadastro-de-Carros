@@ -4,7 +4,8 @@
  * @var \App\Model\Entity\Marca[]|\Cake\Collection\CollectionInterface $marcas
  */
 ?>
-<?= $this->Html->link(__('Voltar'), ['action' => 'home'], ['class' => 'button float-left']) ?>
+<a href="http://localhost/Carros/Usuario"><button class="button float-left">
+Voltar</button></a> 
 <br>
 <br>
 <div class="marcas index content">

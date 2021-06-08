@@ -68,7 +68,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<div class="container"><?= $this->Html->link(__('Voltar'), ['action' => 'display'], ['class' => 'button float-left']) ?></div>
+<div class="container">
+<a href="http://localhost/Carros/Usuario"><button class="button float-left">
+Voltar</button></a> 
+</div>
 <br>
 <br>
 <body>

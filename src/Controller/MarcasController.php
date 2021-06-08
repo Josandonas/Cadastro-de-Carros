@@ -94,8 +94,7 @@ class MarcasController extends AppController
      * @return \Cake\Http\Response|null|void Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
-    {
+    public function delete($id = null){
         $this->request->allowMethod(['post', 'delete']);
         $marca = $this->Marcas->get($id);
         if ($this->Marcas->delete($marca)) {
@@ -105,8 +104,5 @@ class MarcasController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
-    }
-    public function home(){
-        return $this->redirect(['controller' => 'Pages', 'action' => 'display']);
     }
 }

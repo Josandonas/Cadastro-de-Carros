@@ -2,12 +2,14 @@
 declare(strict_types=1);
 
 namespace App\Controller;
-
+use App\Model\Entity\Core;
 /**
  * Usuario Controller
  *
  * @property \App\Model\Table\UsuarioTable $Usuario
  * @method \App\Model\Entity\Usuario[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @property \App\Model\Table\CoresTable $Cores
+ * @method \App\Model\Entity\Core[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class UsuarioController extends AppController{
     /**
@@ -16,14 +18,14 @@ class UsuarioController extends AppController{
      * @return \Cake\Http\Response|null|void Renders view
      */
     public $paginate = [
-        // Outras chaves aqui.
         'maxLimit' => 5
     ];
-    public function index()
-    {
-        $usuario = $this->paginate($this->Usuario);
-
+    public function index(){
+        $usuario = $this->paginate($this->Usuario);        
+        // $cores = $this->paginate($this->Cores);
         $this->set(compact('usuario'));
+        // $this->set(compact('cores'));
+
     }
 
     /**
@@ -49,6 +51,7 @@ class UsuarioController extends AppController{
      */
     public function add()
     {
+        dd("aqui estou");
         $usuario = $this->Usuario->newEmptyEntity();
         if ($this->request->is('post')) {
             $usuario = $this->Usuario->patchEntity($usuario, $this->request->getData());
@@ -57,7 +60,7 @@ class UsuarioController extends AppController{
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The usuario could not be saved. Please, try again.'));
+            $this->Flash->error(__('Ocorreu um erro tente novamente.'));
         }
         $this->set(compact('usuario'));
     }
