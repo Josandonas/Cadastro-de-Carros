@@ -14,6 +14,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
@@ -36,16 +37,16 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                         <ul class="navbar-nav ">
                             <li class="nav-item dropdown">
                                 <a class="nav-link  active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    CRUD Teste
+                                    Relatórios <i class="bi bi-file-text" style="font-size: 25px;"></i>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="http://localhost/Carros/Cores">Tabela de Cores</a></li>
-                                    <li><a class="dropdown-item" href="http://localhost/Carros/Modelos">Tabela de Modelos</a></li>
-                                    <li><a class="dropdown-item" href="http://localhost/Carros/Marcas">Tabela de Marcas</a></li>
+                                    <li><a class="dropdown-item" href="http://localhost/Carros/Cores">Relatório de Cores <i class="bi bi-file-earmark-bar-graph"></i></a></li>
+                                    <li><a class="dropdown-item" href="http://localhost/Carros/Modelos">Relatório de Modelos <i class="bi bi-file-earmark-bar-graph"></i></a></li>
+                                    <li><a class="dropdown-item" href="http://localhost/Carros/Marcas">Relatório de Marcas <i class="bi bi-file-earmark-bar-graph"></i></a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="http://localhost/Carros/pages/home">Estado da Aplicação</a>
+                                <a class="nav-link active" aria-current="page" href="http://localhost/Carros/pages/home">Estado da Aplicação <i class="bi bi-wrench"style="font-size: 25px;"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -53,6 +54,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             </div>
         </nav>
     </header>
+    <div class="container-fluid">
+        
+    </div>
 
 </body>
 </html>
