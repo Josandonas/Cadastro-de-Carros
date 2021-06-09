@@ -1,7 +1,5 @@
 <?php
 /**
- * @var \App\View\AppView $this
- * * @var \App\Model\Entity\Usuario $usuario
  * @var \App\Model\Entity\Usuario[]|\Cake\Collection\CollectionInterface $usuario
  */
 // $this->Html->link(__('Edit'), ['action' => 'edit', $usuario->id])
@@ -113,12 +111,30 @@ $this->disableAutoLayout();
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <!-- <form method="post" action="add" enctype="multipart/form-data"> -->
-        <?= $this->Form->create($usuario); ?>
-            <div class="form-group">
+        
+        <!-- <form method="post" action=""/Carros/Usuario/add" enctype="multipart/form-data"> -->
+        <?= $set->Form->create($usuario) ?>
+            <fieldset>
+                <?echo $this->Form->select(
+                    'marca',
+                    ['Fiat', 'Sedan', 'Chevrolet','Uno'],
+                    ['empty' => '(choose one)']
+                );?>
+                <?echo $this->Form->select(
+                    'modelo',
+                    ['cp34','red'],
+                    ['empty' => '(choose one)']
+                );?>
+                <?echo $this->Form->select(
+                    'cor',
+                    ['cinza','azul'],
+                    ['empty' => '(choose one)']
+                );?>
+            </fieldset>
+            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->end() ?>
+            <!-- <div class="form-group">
                 <label>Modelo</label>
-                <?php
-                 dd($this->Form->control('marca'));?>
                 <select class="form-select" name="modelo" id="modelo">
                     <option selected >Selecione um Item</option>
                     <option>CB-400</option>
@@ -146,11 +162,10 @@ $this->disableAutoLayout();
                     <option value="2">azul</option>
                     <option value="3">Fosco</option>
                 </select>
-            </div>
-            <br>
-            <div class="text-center"><button type="Submit" class="btn btn-success btn-lg">Salvar</button></div>
+            </div> -->
+            <!-- <br>
+            <div class="text-center"><button type="Submit" class="btn btn-success btn-lg">Salvar</button></div> -->
                     <!-- </form> -->
-            <?= $this->Form->end() ?>
             <br>
         <!-- <div>Marca:<br> <input type="text" name="marca" id="marca" class="form-control" maxlength="40" required autofocus></div>
         <div>Modelo:<br> <input type="text" name="modelo" id="modelo" class="form-control" maxlength="5000" required autofocus></div>            

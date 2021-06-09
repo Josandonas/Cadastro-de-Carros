@@ -5,7 +5,6 @@
 /logs/*
 /tmp/*
 /vendor/*
-/.github/
 
 # OS generated files #
 ######################
@@ -42,3 +41,5 @@ nbproject/*
 .vscode
 # Sass preprocessor
 .sass-cache/
+#PastaDesncessária
+/.github/
