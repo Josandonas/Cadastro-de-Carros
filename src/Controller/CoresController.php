@@ -20,10 +20,12 @@ class CoresController extends AppController
     ];
     public function index(){
         $cores = $this->paginate($this->Cores);
-
         $this->set(compact('cores'));
     }
-
+    public function VerCores(){
+        $cores = $this->paginate($this->Cores);
+        $this->set(compact('cores'));
+    }
     /**
      * View method
      *

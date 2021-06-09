@@ -113,7 +113,8 @@ $this->disableAutoLayout();
         <div class="modal-body">
         
         <!-- <form method="post" action=""/Carros/Usuario/add" enctype="multipart/form-data"> -->
-        <?= $set->Form->create($usuario) ?>
+        <?= $this->Form->create($usuario) ?>
+        <?  ?>
             <fieldset>
                 <?echo $this->Form->select(
                     'marca',
@@ -131,7 +132,6 @@ $this->disableAutoLayout();
                     ['empty' => '(choose one)']
                 );?>
             </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
             <!-- <div class="form-group">
                 <label>Modelo</label>

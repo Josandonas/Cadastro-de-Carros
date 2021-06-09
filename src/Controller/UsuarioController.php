@@ -2,8 +2,8 @@
 declare(strict_types=1);
 
 namespace App\Controller;
-use App\Model\Entity\Core;
-use Cake\Controller\Controller;
+use App\Controller\CoresController;
+use App\Model\Table\CoresTable;
 
 /**
  * Usuario Controller
@@ -17,9 +17,17 @@ class UsuarioController extends AppController{
     public $paginate = [
         'maxLimit' => 5
     ];
+    // public function __construct(CoresTable $cores){
+    //     $this->Cores=$cores;
+    // }
     public function index(){
-        $usuario = $this->paginate($this->Usuario);        
-        $this->set(compact('usuario'));        
+        $cores = new CoresController();
+        // $usuario = $this->paginate($this->Usuario);      
+        // dd($usuario);
+        // dd($this->set(compact('usuario')));  
+        // $cores = $this->paginate($this->Cores);
+        dd($cores);
+        // dd($this->set(compact('core')));      
     }
     public function view($id = null){
         $usuario = $this->Usuario->get($id, [
