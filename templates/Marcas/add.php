@@ -15,7 +15,7 @@
         <div class="marcas form content">
             <?= $this->Form->create($marca) ?>
             <fieldset>
-                <legend><?= __('Add Marca') ?></legend>
+                <h4><center><?= __('Adicionar Nova Marca') ?></center></h4>
                 <?php
                     echo $this->Form->control('nome');
                     echo $this->Form->control('idModelo');

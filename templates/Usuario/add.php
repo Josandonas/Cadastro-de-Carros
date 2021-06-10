@@ -15,7 +15,7 @@
         <div class="usuario form content">
             <?= $this->Form->create($usuario) ?>
             <fieldset>
-                <legend><?= __('Add Usuario') ?></legend>
+                <h4><center><?= __('Adicionar Novo Cadastro') ?></center></h4>
                 <?php
                     echo $this->Form->control('marca');
                     echo $this->Form->control('modelo');

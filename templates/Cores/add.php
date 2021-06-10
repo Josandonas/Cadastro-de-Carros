@@ -15,7 +15,7 @@
         <div class="cores form content">
             <?= $this->Form->create($core) ?>
             <fieldset>
-                <legend><?= __('Adicionar Nova Cor') ?></legend>
+                <h4><center><?= __('Adicionar Nova Cor') ?></center></h4>
                 <?php
                     echo $this->Form->control('nomeCor');
                 ?>

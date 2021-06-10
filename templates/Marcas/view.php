@@ -19,16 +19,8 @@
             <h3><?= h($marca->id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Nome') ?></th>
+                    <th><?= __('Marca:') ?></th>
                     <td><?= h($marca->nome) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($marca->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('IdModelo') ?></th>
-                    <td><?= $this->Number->format($marca->idModelo) ?></td>
                 </tr>
             </table>
         </div>

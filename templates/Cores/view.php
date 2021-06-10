@@ -19,12 +19,8 @@
             <h3><?= h($core->idCor) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('NomeCor') ?></th>
+                    <th><?= __('Cor:') ?></th>
                     <td><?= h($core->nomeCor) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('IdCor') ?></th>
-                    <td><?= $this->Number->format($core->idCor) ?></td>
                 </tr>
             </table>
         </div>
