@@ -28,13 +28,11 @@ class ModelosController extends AppController
         $this->set(compact('modelos'));
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Modelo id.
-     * @return \Cake\Http\Response|null|void Renders view
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
+    public function VerModelos(){
+        $modelos= $this->Modelos->find('all')->select($this->Modelos);
+        return $modelos;
+    }
+
     public function view($id = null)
     {
         $modelo = $this->Modelos->get($id, [

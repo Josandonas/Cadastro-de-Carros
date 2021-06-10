@@ -1,6 +1,8 @@
 <?php
 /**
+ * @var \App\View\AppView $this
  * @var \App\Model\Entity\Usuario[]|\Cake\Collection\CollectionInterface $usuario
+ * @var \Cake\Datasource\EntityInterface[]|\Cake\Collection\CollectionInterface $cores
  */
 // $this->Html->link(__('Edit'), ['action' => 'edit', $usuario->id])
 $this->disableAutoLayout();
@@ -21,10 +23,7 @@ $this->disableAutoLayout();
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-        
     </head>
     <body>
         <header>
@@ -76,9 +75,9 @@ $this->disableAutoLayout();
                     <tbody>
                         <?php foreach ($usuario as $usuario): ?>
                         <tr>
-                            <td><?= h($usuario->marca) ?></td>
+                            <td><?= h($usuario->marca)  ?></td>
                             <td><?= h($usuario->modelo) ?></td>
-                            <td><?= h($usuario->cor) ?></td>
+                            <td><?= h($usuario->cor)    ?></td>
                             <td class="text-center">
                                 <div class="d-grid gap-2 d-md-block">
                                     <button class="btn btn-warning" type="button" >Editar <i class="bi bi-pencil-fill"></i></button>
@@ -100,7 +99,6 @@ $this->disableAutoLayout();
                 </ul>
                 <div class="form-inline"><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, Registros {{current}} de {{count}} no total')) ?></div>
         </div>
-  
     </body>
     <div class="modal fade" id="modalAD" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     
@@ -111,36 +109,16 @@ $this->disableAutoLayout();
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        
-        <!-- <form method="post" action=""/Carros/Usuario/add" enctype="multipart/form-data"> -->
-        <?= $this->Form->create($usuario) ?>
-        <?  ?>
-            <fieldset>
-                <?echo $this->Form->select(
-                    'marca',
-                    ['Fiat', 'Sedan', 'Chevrolet','Uno'],
-                    ['empty' => '(choose one)']
-                );?>
-                <?echo $this->Form->select(
-                    'modelo',
-                    ['cp34','red'],
-                    ['empty' => '(choose one)']
-                );?>
-                <?echo $this->Form->select(
-                    'cor',
-                    ['cinza','azul'],
-                    ['empty' => '(choose one)']
-                );?>
-            </fieldset>
-            <?= $this->Form->end() ?>
-            <!-- <div class="form-group">
+            <?= $this->Form->create($usuario) ?>
+                <fieldset>
+                    <div class="form-group">
                 <label>Modelo</label>
                 <select class="form-select" name="modelo" id="modelo">
                     <option selected >Selecione um Item</option>
-                    <option>CB-400</option>
-                    <?php foreach ($cores as $cores): ?>
-                        <option><?= h($cores->nameCor) ?></option>
-                    <?php endforeach; ?>
+                        <?php foreach ($modelos as $modelos): ?>
+                    <option><?= h($modelos->nomeModelo) ?></option>
+                        <?php endforeach; ?>
+                   
                 </select>
             </div>
             <br>
@@ -148,9 +126,9 @@ $this->disableAutoLayout();
                 <label>Marca</label>
                 <select class="form-select" name="marca" id="marca">
                     <option selected>Selecione um Item</option>
-                    <option value="1">Sedan</option>
-                    <option value="2">Chevrolet</option>
-                    <option value="3">Fiat</option>
+                        <?php foreach ($marcas as $marcas): ?>
+                    <option><?= h($marcas->nome) ?></option>
+                        <?php endforeach; ?>
                 </select>
             </div>
             <br>
@@ -158,19 +136,19 @@ $this->disableAutoLayout();
                 <label>Cor</label>
                 <select class="form-select" name="cor" id="cor">
                     <option selected>Selecione um Item</option>
-                    <option value="1">roxo</option>
-                    <option value="2">azul</option>
-                    <option value="3">Fosco</option>
+                        <?php foreach ($cores as $cores): ?>
+                    <option><?= h($cores->nomeCor) ?></option>
+                        <?php endforeach; ?>
                 </select>
-            </div> -->
-            <!-- <br>
-            <div class="text-center"><button type="Submit" class="btn btn-success btn-lg">Salvar</button></div> -->
-                    <!-- </form> -->
+            </div>
+            <br>
+            <div class="text-center"><button type="Submit" class="btn btn-success btn-lg">Salvar</button></div>
             <br>
         <!-- <div>Marca:<br> <input type="text" name="marca" id="marca" class="form-control" maxlength="40" required autofocus></div>
         <div>Modelo:<br> <input type="text" name="modelo" id="modelo" class="form-control" maxlength="5000" required autofocus></div>            
         <div>Cor:<br> <textarea type="text-area" name="cor" id="cor" class="form-control" maxlength="6000" required autofocus></textarea> -->
-        
+                </fieldset>
+            <?= $this->Form->end() ?>        
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
         </div>

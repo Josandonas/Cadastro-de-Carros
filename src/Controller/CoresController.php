@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 namespace App\Controller;
-
 /**
  * Cores Controller
  *
@@ -19,12 +18,13 @@ class CoresController extends AppController
         'maxLimit' => 5
     ];
     public function index(){
+        
         $cores = $this->paginate($this->Cores);
         $this->set(compact('cores'));
     }
     public function VerCores(){
-        $cores = $this->paginate($this->Cores);
-        $this->set(compact('cores'));
+        $cores= $this->Cores->find('all')->select($this->Cores);
+        return $cores;
     }
     /**
      * View method

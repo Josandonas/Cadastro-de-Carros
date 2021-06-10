@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 use App\Controller\CoresController;
-use App\Model\Table\CoresTable;
+use App\Controller\MarcasController;
+use App\Controller\ModelosController;
 
 /**
  * Usuario Controller
@@ -17,17 +18,22 @@ class UsuarioController extends AppController{
     public $paginate = [
         'maxLimit' => 5
     ];
-    // public function __construct(CoresTable $cores){
-    //     $this->Cores=$cores;
-    // }
     public function index(){
+        // dados da tabela cores
         $cores = new CoresController();
-        // $usuario = $this->paginate($this->Usuario);      
-        // dd($usuario);
-        // dd($this->set(compact('usuario')));  
-        // $cores = $this->paginate($this->Cores);
-        dd($cores);
-        // dd($this->set(compact('core')));      
+        $cores = $cores->VerCores();
+        $this->set(compact('cores'));
+        // dados da tabela marcas
+        $marcas = new MarcasController();
+        $marcas = $marcas->VerMarcas();
+        $this->set(compact('marcas'));
+        // dados da tabela modelos
+        $modelos = new ModelosController();
+        $modelos = $modelos->VerModelos();
+        $this->set(compact('modelos'));
+        //dados usuario principal
+        $usuario = $this->paginate($this->Usuario);      
+        $this->set(compact('usuario'));  
     }
     public function view($id = null){
         $usuario = $this->Usuario->get($id, [

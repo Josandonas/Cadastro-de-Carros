@@ -26,14 +26,10 @@ class MarcasController extends AppController
 
         $this->set(compact('marcas'));
     }
-
-    /**
-     * View method
-     *
-     * @param string|null $id Marca id.
-     * @return \Cake\Http\Response|null|void Renders view
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
+    public function VerMarcas(){
+        $marcas= $this->Marcas->find('all')->select($this->Marcas);
+        return $marcas;
+    }
     public function view($id = null)
     {
         $marca = $this->Marcas->get($id, [
