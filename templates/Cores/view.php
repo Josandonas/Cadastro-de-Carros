@@ -16,7 +16,6 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="cores view content">
-            <h3><?= h($core->idCor) ?></h3>
             <table>
                 <tr>
                     <th><?= __('Cor:') ?></th>

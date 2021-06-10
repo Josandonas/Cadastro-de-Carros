@@ -26,7 +26,7 @@ Voltar</button></a>
                     <td class="actions">
                         <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $modelo->id]) ?>
                         <?= $this->Html->link(__('Editar'), ['action' => 'edit', $modelo->id]) ?>
-                        <?= $this->Form->postLink(__('Apagar'), ['action' => 'delete', $modelo->id], ['confirm' => __('Quer mesmo apagar o Modelo de ID # {0}?', $modelo->id)]) ?>
+                        <?= $this->Form->postLink(__('Apagar'), ['action' => 'delete', $modelo->id], ['confirm' => __('Quer mesmo apagar o Modelo {0}?', $modelo->nomeModelo)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

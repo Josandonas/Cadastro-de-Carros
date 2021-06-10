@@ -23,7 +23,7 @@
             <h4><center><?= __('Editar Marca') ?></center></h5>
                 <?php
                     echo $this->Form->control('nome');
-                    echo $this->Form->control('idModelo');
+                    $this->Form->control('idModelo');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

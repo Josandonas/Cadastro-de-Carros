@@ -16,7 +16,6 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="marcas view content">
-            <h3><?= h($marca->id) ?></h3>
             <table>
                 <tr>
                     <th><?= __('Marca:') ?></th>

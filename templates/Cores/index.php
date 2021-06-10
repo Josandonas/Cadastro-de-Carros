@@ -16,7 +16,6 @@ Voltar</button></a>
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('idCor') ?></th>
                     <th><?= $this->Paginator->sort('nomeCor') ?></th>
                     <th class="actions"><?= __('Ações') ?></th>
                 </tr>
@@ -24,12 +23,11 @@ Voltar</button></a>
             <tbody>
                 <?php foreach ($cores as $core): ?>
                 <tr>
-                    <td><?= $this->Number->format($core->idCor) ?></td>
                     <td><?= h($core->nomeCor) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $core->idCor]) ?>
                         <?= $this->Html->link(__('Editar'), ['action' => 'edit', $core->idCor]) ?>
-                        <?= $this->Form->postLink(__('Apagar'), ['action' => 'delete', $core->idCor], ['confirm' => __('Quer mesmo apagar a cor do ID # {0}?', $core->idCor)]) ?>
+                        <?= $this->Form->postLink(__('Apagar'), ['action' => 'delete', $core->idCor], ['confirm' => __('Quer mesmo apagar a cor {0} ?', $core->nomeCor)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
