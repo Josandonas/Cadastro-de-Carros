@@ -66,6 +66,7 @@ $this->disableAutoLayout();
                 <caption><h1 class="text-black" align="center"> Gerenciador </h1></caption>
                     <thead>
                         <tr>
+                            <th class="text-center">Código</th>
                             <th>Marca</th>
                             <th>Modelo</th>
                             <th>Cor</th>
@@ -75,13 +76,14 @@ $this->disableAutoLayout();
                     <tbody>
                         <?php foreach ($usuario as $usuario): ?>
                         <tr>
+                            <td class="text-center"><?= h($usuario->id)  ?></td>
                             <td><?= h($usuario->marca)  ?></td>
                             <td><?= h($usuario->modelo) ?></td>
                             <td><?= h($usuario->cor)    ?></td>
                             <td class="text-center">
                                 <div class="d-grid gap-2 d-md-block">
                                     <button class="btn btn-warning" type="button" >Editar <i class="bi bi-pencil-fill"></i></button>
-                                    <button class="btn btn-danger" type="button"> <?= $this->Form->postLink(__('Apagar'), ['action' => 'delete', $usuario->id], ['confirm' => __('Tem certeza que deseja Apagar', $usuario->id)]) ?> <i class="bi bi-trash-fill"></i></button>
+                                    <button class="btn btn-danger" type="button"> <?= $this->Form->postLink(__('Apagar'), ['action' => 'delete', $usuario->id], ['confirm' => __('Tem certeza que deseja apagar o carro do código: {0}', $usuario->id)]) ?> <i class="bi bi-trash-fill"></i></button>
                                 </div>
                             </td>
                         </tr>
