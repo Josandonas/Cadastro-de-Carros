@@ -15,15 +15,13 @@ Voltar</button></a>
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('nomeModelo') ?></th>
+                    <th><?= $this->Paginator->sort('Modelos') ?></th>
                     <th class="actions"><?= __('Ações') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($modelos as $modelo): ?>
                 <tr>
-                    <td><?= $this->Number->format($modelo->id) ?></td>
                     <td><?= h($modelo->nomeModelo) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $modelo->id]) ?>
@@ -43,7 +41,7 @@ Voltar</button></a>
             <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('Próximo') . ' >') ?>
-            <?= $this->Paginator->last(__('Anterior') . ' >>') ?>
+            <?= $this->Paginator->last(__('Último') . ' >>') ?>
         </ul>
         <p><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, Registros {{current}} de {{count}} no total')) ?></p>
     </div>

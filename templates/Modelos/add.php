@@ -15,7 +15,7 @@
         <div class="modelos form content">
             <?= $this->Form->create($modelo) ?>
             <fieldset>
-                <legend><?= __('Adicionar Novo Modelo') ?></legend>
+                <h1 style="text-align: center;"><?= __('Adicionar Novo Modelo') ?></h1>
                 <?php
                     echo $this->Form->control('nomeModelo');
                 ?>

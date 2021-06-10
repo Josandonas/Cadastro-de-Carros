@@ -16,15 +16,10 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="modelos view content">
-            <h3><?= h($modelo->id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('NomeModelo') ?></th>
+                    <th><?= __('Modelo:') ?></th>
                     <td><?= h($modelo->nomeModelo) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($modelo->id) ?></td>
                 </tr>
             </table>
         </div>

@@ -20,7 +20,7 @@
         <div class="modelos form content">
             <?= $this->Form->create($modelo) ?>
             <fieldset>
-                <legend><?= __('Edit Modelo') ?></legend>
+                <h4><center><?= __('Editar Modelo') ?></center></h5>
                 <?php
                     echo $this->Form->control('nomeModelo');
                 ?>

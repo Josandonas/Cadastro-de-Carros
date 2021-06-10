@@ -20,7 +20,7 @@
         <div class="cores form content">
             <?= $this->Form->create($core) ?>
             <fieldset>
-                <legend><?= __('Editar Cor') ?></legend>
+            <h4><center><?= __('Editar Cor') ?></center></h5>
                 <?php
                     echo $this->Form->control('nomeCor');
                 ?>

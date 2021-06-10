@@ -44,7 +44,7 @@ Voltar</button></a>
             <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('Próximo') . ' >') ?>
-            <?= $this->Paginator->last(__('Anterior') . ' >>') ?>
+            <?= $this->Paginator->last(__('Último') . ' >>') ?>
         </ul>
         <p><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, Registros {{current}} de {{count}} no total')) ?></p>
     </div>

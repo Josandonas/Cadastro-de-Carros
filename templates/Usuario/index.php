@@ -81,7 +81,7 @@ $this->disableAutoLayout();
                             <td class="text-center">
                                 <div class="d-grid gap-2 d-md-block">
                                     <button class="btn btn-warning" type="button" >Editar <i class="bi bi-pencil-fill"></i></button>
-                                    <button class="btn btn-danger" type="button"> <?= $this->Form->postLink(__('Apagar'), ['action' => 'delete', $usuario->id], ['block'=>true, 'confirm' => __('Tem certeza que deseja Apagar', $usuario->id)]) ?> <i class="bi bi-trash-fill"></i></button>
+                                    <button class="btn btn-danger" type="button"> <?= $this->Form->postLink(__('Apagar'), ['action' => 'delete', $usuario->id], ['confirm' => __('Tem certeza que deseja Apagar', $usuario->id)]) ?> <i class="bi bi-trash-fill"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -95,7 +95,7 @@ $this->disableAutoLayout();
                     <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
                     <?= $this->Paginator->numbers() ?>
                     <?= $this->Paginator->next(__('Próximo') . ' >') ?>
-                    <?= $this->Paginator->last(__('Anterior') . ' >>') ?>
+                    <?= $this->Paginator->last(__('Último') . ' >>') ?>
                 </ul>
                 <div class="form-inline"><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, Registros {{current}} de {{count}} no total')) ?></div>
         </div>

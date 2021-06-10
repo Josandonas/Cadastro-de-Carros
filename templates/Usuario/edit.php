@@ -20,7 +20,7 @@
         <div class="usuario form content">
             <?= $this->Form->create($usuario) ?>
             <fieldset>
-                <legend><?= __('Edit Usuario') ?></legend>
+            <h4><center><?= __('Editar Dados') ?></center></h5>
                 <?php
                     echo $this->Form->control('marca');
                     echo $this->Form->control('modelo');
