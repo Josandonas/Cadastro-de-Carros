@@ -6,6 +6,8 @@
  */
 // $this->Html->link(__('Edit'), ['action' => 'edit', $usuario->id])
 $this->disableAutoLayout();
+
+$cakeDescription = 'Página de Cadastro de Carros';
 ?>
 <!DOCTYPE html>
 <html>
@@ -102,63 +104,62 @@ $this->disableAutoLayout();
                 <div class="form-inline"><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, Registros {{current}} de {{count}} no total')) ?></div>
         </div>
     </body>
-    <div class="modal fade" id="modalAD" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <div class="text-center"><h5 class="modal-title">Novo Registro</h5></div>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <?= $this->Form->create($usuario) ?>
-                <fieldset>
+    <div class="modal fade" id="modalAD" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">    
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="text-center"><h5 class="modal-title">Novo Carro</h5></div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?= $this->Form->create($usuario) ?>
+                        <fieldset>
+                            <div class="form-group">
+                        <label>Modelo</label>
+                        <select class="form-select" name="modelo" id="modelo">
+                            <option selected >Selecione um Item</option>
+                                <?php foreach ($modelos as $modelos): ?>
+                            <option><?= h($modelos->nomeModelo) ?></option>
+                                <?php endforeach; ?>
+                        
+                        </select>
+                    </div>
+                    <br>
                     <div class="form-group">
-                <label>Modelo</label>
-                <select class="form-select" name="modelo" id="modelo">
-                    <option selected >Selecione um Item</option>
-                        <?php foreach ($modelos as $modelos): ?>
-                    <option><?= h($modelos->nomeModelo) ?></option>
-                        <?php endforeach; ?>
-                   
-                </select>
+                        <label>Marca</label>
+                        <select class="form-select" name="marca" id="marca">
+                            <option selected>Selecione um Item</option>
+                                <?php foreach ($marcas as $marcas): ?>
+                            <option><?= h($marcas->nome) ?></option>
+                                <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Cor</label>
+                        <select class="form-select" name="cor" id="cor">
+                            <option selected>Selecione um Item</option>
+                                <?php foreach ($cores as $cores): ?>
+                            <option><?= h($cores->nomeCor) ?></option>
+                                <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="text-center"><button type="Submit" class="btn btn-success btn-lg"><i class="bi bi-clipboard-check"></i> Salvar</button></div>
+                    <br>
+                <!-- <div>Marca:<br> <input type="text" name="marca" id="marca" class="form-control" maxlength="40" required autofocus></div>
+                <div>Modelo:<br> <input type="text" name="modelo" id="modelo" class="form-control" maxlength="5000" required autofocus></div>            
+                <div>Cor:<br> <textarea type="text-area" name="cor" id="cor" class="form-control" maxlength="6000" required autofocus></textarea> -->
+                        </fieldset>
+                    <?= $this->Form->end() ?>        
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+                
+                </div>
             </div>
-            <br>
-            <div class="form-group">
-                <label>Marca</label>
-                <select class="form-select" name="marca" id="marca">
-                    <option selected>Selecione um Item</option>
-                        <?php foreach ($marcas as $marcas): ?>
-                    <option><?= h($marcas->nome) ?></option>
-                        <?php endforeach; ?>
-                </select>
-            </div>
-            <br>
-            <div class="form-group">
-                <label>Cor</label>
-                <select class="form-select" name="cor" id="cor">
-                    <option selected>Selecione um Item</option>
-                        <?php foreach ($cores as $cores): ?>
-                    <option><?= h($cores->nomeCor) ?></option>
-                        <?php endforeach; ?>
-                </select>
-            </div>
-            <br>
-            <div class="text-center"><button type="Submit" class="btn btn-success btn-lg">Salvar</button></div>
-            <br>
-        <!-- <div>Marca:<br> <input type="text" name="marca" id="marca" class="form-control" maxlength="40" required autofocus></div>
-        <div>Modelo:<br> <input type="text" name="modelo" id="modelo" class="form-control" maxlength="5000" required autofocus></div>            
-        <div>Cor:<br> <textarea type="text-area" name="cor" id="cor" class="form-control" maxlength="6000" required autofocus></textarea> -->
-                </fieldset>
-            <?= $this->Form->end() ?>        
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        </div>
-        
         </div>
     </div>
-
-</div>
 </html>
 
 
