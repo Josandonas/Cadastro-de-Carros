@@ -8,6 +8,7 @@
 // echo $this->Form->control('marca');
 // echo $this->Form->control('modelo');
 // echo $this->Form->control('cores');
+
 ?>
 <div class="row">
     <aside class="column">

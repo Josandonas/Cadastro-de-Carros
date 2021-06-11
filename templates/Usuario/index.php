@@ -7,7 +7,6 @@
  * @var \App\Model\Entity\Usuario $usuario
  */
 $this->disableAutoLayout();
-
 $cakeDescription = 'Página de Cadastro de Carros';
 ?>
 <!DOCTYPE html>
@@ -37,33 +36,29 @@ $cakeDescription = 'Página de Cadastro de Carros';
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    
-                    <div class="form-inline">
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="form-inline">
-                            <ul class="navbar-nav ">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link  active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Relatórios <i class="bi bi-file-text" style="font-size: 25px;"></i>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="http://localhost/Carros/Cores">Relatório de Cores <i class="bi bi-file-earmark-bar-graph"></i></a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/Carros/Modelos">Relatório de Modelos <i class="bi bi-file-earmark-bar-graph"></i></a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/Carros/Marcas">Relatório de Marcas <i class="bi bi-file-earmark-bar-graph"></i></a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="http://localhost/Carros/pages/home">Estado da Aplicação <i class="bi bi-wrench"style="font-size: 25px;"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ">
+                            <li></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link  active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Relatórios <i class="bi bi-file-text" style="font-size: 25px;"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="http://localhost/Carros/Cores">Relatório de Cores <i class="bi bi-file-earmark-bar-graph"></i></a></li>
+                                    <li><a class="dropdown-item" href="http://localhost/Carros/Modelos">Relatório de Modelos <i class="bi bi-file-earmark-bar-graph"></i></a></li>
+                                    <li><a class="dropdown-item" href="http://localhost/Carros/Marcas">Relatório de Marcas <i class="bi bi-file-earmark-bar-graph"></i></a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="http://localhost/Carros/pages/home">Estado da Aplicação <i class="bi bi-wrench"style="font-size: 25px;"></i></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
         </header>
         <br>
-        <div class="container">
+        <div class="container-fluid">
             <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#ModalAdicionar">Novo Cadastro <i class="bi bi-plus-circle" style="font-size: 20px;"></i></button>
                 <table class="table table-secondary table-bordered caption-top">
                 <caption><h1 class="text-black" align="center"> Gerenciador </h1></caption>
