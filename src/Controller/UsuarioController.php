@@ -5,15 +5,14 @@ namespace App\Controller;
 use App\Controller\CoresController;
 use App\Controller\MarcasController;
 use App\Controller\ModelosController;
+use App\Model\Entity\Usuario;
 
 /**
  * Usuario Controller
  *
  * @property \App\Model\Table\UsuarioTable $Usuario
  * @method \App\Model\Entity\Usuario[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- * @property \App\Model\Table\CoresTable $Cores
- * @method \App\Model\Entity\Core[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
+*/
 class UsuarioController extends AppController{
     public $paginate = [
         'maxLimit' => 5
@@ -34,6 +33,11 @@ class UsuarioController extends AppController{
         //dados usuario principal
         $usuario = $this->paginate($this->Usuario);      
         $this->set(compact('usuario'));  
+        
+        if ($this->request->is('post')) {
+            $usuario=$this->request->getData();
+            $this->add($usuario);
+        }
     }
     public function view($id = null){
         $usuario = $this->Usuario->get($id, [
@@ -42,7 +46,8 @@ class UsuarioController extends AppController{
 
         $this->set(compact('usuario'));
     }
-    public function add(){
+
+    public function add($usuario){
         $usuario = $this->Usuario->newEmptyEntity();
         if ($this->request->is('post')) {
             $usuario = $this->Usuario->patchEntity($usuario, $this->request->getData());
@@ -55,8 +60,8 @@ class UsuarioController extends AppController{
         }
         $this->set(compact('usuario'));
     }
-    public function edit($id = null)
-    {
+
+    public function edit($id = null){
         $usuario = $this->Usuario->get($id, [
             'contain' => [],
         ]);

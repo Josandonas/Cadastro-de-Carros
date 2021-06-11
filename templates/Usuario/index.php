@@ -3,6 +3,8 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Usuario[]|\Cake\Collection\CollectionInterface $usuario
  * @var \Cake\Datasource\EntityInterface[]|\Cake\Collection\CollectionInterface $cores
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Usuario $usuario
  */
 // $this->Html->link(__('Edit'), ['action' => 'edit', $usuario->id])
 $this->disableAutoLayout();
@@ -63,7 +65,7 @@ $cakeDescription = 'Página de Cadastro de Carros';
         </header>
         <br>
         <div class="container">
-            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalAD">Novo Cadastro <i class="bi bi-plus-lg" style="font-size: 20px;"></i></button>
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#ModalAdicionar">Novo Cadastro <i class="bi bi-plus-circle" style="font-size: 20px;"></i></button>
                 <table class="table table-secondary table-bordered caption-top">
                 <caption><h1 class="text-black" align="center"> Gerenciador </h1></caption>
                     <thead>
@@ -94,72 +96,91 @@ $cakeDescription = 'Página de Cadastro de Carros';
                     </tbody>
                 </table>
                 <br>
+                <? if($this->Paginator->counter(__('{{pages}}')) > 1 ){?>
                 <ul class="pagination justify-content-center">
-                    <?= $this->Paginator->first('<< ' . __('Primeiro')) ?>
-                    <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
-                    <?= $this->Paginator->numbers() ?>
-                    <?= $this->Paginator->next(__('Próximo') . ' >') ?>
-                    <?= $this->Paginator->last(__('Último') . ' >>') ?>
+                    <div class="d-grid gap-5 d-md-block">
+                    
+                        <? if($this->Paginator->counter(__('{{count}}')) < 5 ){?>
+                            <button class="btn btn-dark"><?= $this->Paginator->first(__('Primeiro')) ?></button>
+                        
+                        <?}?> 
+                            <button class="btn btn-dark"><?= $this->Paginator->prev(__('Anterior')) ?></button>
+                            <button class="btn btn-dark"> <?= $this->Paginator->next(__('Próxima')) ?></button>
+                        <? if($this->Paginator->counter(__('{{page}}')) < $this->Paginator->counter(__('{{pages}}')) ){ ?>
+                            <button class="btn btn-dark"><?= $this->Paginator->last(__('Última')) ?></button>
+                        <?}?>
+                    
+                    </div>
                 </ul>
-                <div class="form-inline"><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, Registros {{current}} de {{count}} no total')) ?></div>
+                <?}?>
+                <center><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, Registros {{current}} de {{count}} no total')) ?><center>
         </div>
     </body>
-    <div class="modal fade" id="modalAD" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">    
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="text-center"><h5 class="modal-title">Novo Carro</h5></div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</html>
+<div class="modal fade" id="ModalAdicionar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">    
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <br>
+            <thead class="mb-3">
+                <div class="row">
+                    <div class="col-6">
+                        <h4><i class="bi bi-stoplights"></i> Novo Carro <i class="bi bi-stoplights"></i></h4>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex justify-content-end" style="padding: 0.25em 1.25em !important;">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                    </div>
                 </div>
+            </thead>
+            <div class="usuario form content">
+                <?= $this->Form->create()?>
                 <div class="modal-body">
-                    <?= $this->Form->create($usuario) ?>
-                        <fieldset>
-                            <div class="form-group">
-                        <label>Modelo</label>
-                        <select class="form-select" name="modelo" id="modelo">
-                            <option selected >Selecione um Item</option>
-                                <?php foreach ($modelos as $modelos): ?>
-                            <option><?= h($modelos->nomeModelo) ?></option>
-                                <?php endforeach; ?>
+                    <fieldset>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" for="modelo">Modelo</span>
+                            <select class="form-select" type="text"
+                                name="modelo" required="required"
+                                id="modelo" maxlength="30">
+                                    <option selected >Selecione um Item</option>
+                                        <?php foreach ($modelos as $modelos): ?>
+                                    <option><?= h($modelos->nomeModelo) ?></option>
+                                        <?php endforeach; ?>
+                            </select>
+                        </div>
                         
-                        </select>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label>Marca</label>
-                        <select class="form-select" name="marca" id="marca">
-                            <option selected>Selecione um Item</option>
-                                <?php foreach ($marcas as $marcas): ?>
-                            <option><?= h($marcas->nome) ?></option>
-                                <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label>Cor</label>
-                        <select class="form-select" name="cor" id="cor">
-                            <option selected>Selecione um Item</option>
-                                <?php foreach ($cores as $cores): ?>
-                            <option><?= h($cores->nomeCor) ?></option>
-                                <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <br>
-                    <div class="text-center"><button type="Submit" class="btn btn-success btn-lg"><i class="bi bi-clipboard-check"></i> Salvar</button></div>
-                    <br>
-                <!-- <div>Marca:<br> <input type="text" name="marca" id="marca" class="form-control" maxlength="40" required autofocus></div>
-                <div>Modelo:<br> <input type="text" name="modelo" id="modelo" class="form-control" maxlength="5000" required autofocus></div>            
-                <div>Cor:<br> <textarea type="text-area" name="cor" id="cor" class="form-control" maxlength="6000" required autofocus></textarea> -->
-                        </fieldset>
-                    <?= $this->Form->end() ?>        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" for="marca">Marca</span>
+                            <select class="form-select"
+                                name="marca" id="marca" required="required"
+                                id="marca" maxlength="30">
+                                    <option selected>Selecione um Item</option>
+                                        <?php foreach ($marcas as $marcas): ?>
+                                    <option><?= h($marcas->nome) ?></option>
+                                        <?php endforeach; ?>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" for="cor">Cor</span>
+                            <select class="form-select" type="text" name="cor"
+                            required="required" id="cor" maxlength="20">
+                                <option selected>Selecione um Item</option>
+                                    <?php foreach ($cores as $cores): ?>
+                                <option><?= h($cores->nomeCor) ?></option>
+                                    <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>    
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="Submit" class="btn btn-success"><i class="bi bi-clipboard-check"></i> Salvar</button>
                 </div>
-                
                 </div>
+                <?= $this->Form->end() ?>  
             </div>
         </div>
     </div>
-</html>
-
+</div>
 
