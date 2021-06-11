@@ -6,7 +6,6 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Usuario $usuario
  */
-// $this->Html->link(__('Edit'), ['action' => 'edit', $usuario->id])
 $this->disableAutoLayout();
 
 $cakeDescription = 'Página de Cadastro de Carros';
@@ -86,7 +85,7 @@ $cakeDescription = 'Página de Cadastro de Carros';
                             <td><?= h($usuario->cor)    ?></td>
                             <td class="text-center">
                                 <div class="d-grid gap-2 d-md-block">
-                                    <button class="btn btn-warning" data-toggle="modal" type="button" data-target="#editando<?php echo $usuario->id; ?>">Editar <i class="bi bi-pencil-fill"></i></button>
+                                    <button class="btn btn-warning" type="button"><?=$this->Html->link(__('Editar'), ['action' => 'edit', $usuario->id]) ?><i class="bi bi-pencil-fill"></i></button>
                                     <button class="btn btn-danger" data-toggle="modal" type="button" data-target="#apagando<?php echo $usuario->id; ?>">Apagar<i class="bi bi-trash-fill"></i></button>
                                     <div class="modal fade" id="apagando<?php echo $usuario->id; ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -200,78 +199,6 @@ $cakeDescription = 'Página de Cadastro de Carros';
                 </div>
                 <?= $this->Form->end() ?>  
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="editando<?php echo $this->$usuario->id; ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-        <br>
-        <thead class="mb-3">
-            <div class="row">
-                <div class="col-6">
-                    <h4>Editar Informações do Carro  <i class="bi bi-pencil-fill"></i></h4>
-                </div>
-                <div class="col-6">
-                    <div class="d-flex justify-content-end" style="padding: 0.25em 1.25em !important;">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                </div>
-            </div>
-        </thead>
-        <div class="modal-body">
-            <div class="usuario form content">
-                <?= $this->Form->create()?>
-                <div class="modal-body">
-                    <fieldset>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" for="modelo">Modelo</span>
-                            <select class="form-select" type="text"
-                                name="modelo" required="required"
-                                id="modelo" maxlength="30">
-                                    <option selected ><? echo $this->$usuario->modelo?></option>
-                                        <?php foreach ($modelos as $modelos): ?>
-                                    <option><?= h($modelos->nomeModelo) ?></option>
-                                        <?php endforeach; ?>
-                            </select>
-                        </div>
-                        
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" for="marca">Marca</span>
-                            <select class="form-select"
-                                name="marca" id="marca" required="required"
-                                id="marca" maxlength="30">
-                                    <option selected><? echo $usuario->marca?></option>
-                                        <?php foreach ($marcas as $marcas): ?>
-                                    <option><?= h($marcas->nome) ?></option>
-                                        <?php endforeach; ?>
-                            </select>
-                        </div>
-                        
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" for="cor">Cor</span>
-                            <select class="form-select" type="text" name="cor"
-                            required="required" id="cor" maxlength="20">
-                                <option selected><? echo $this->$usuario->cor?></option>
-                                    <?php foreach ($cores as $cores): ?>
-                                <option><?= h($cores->nomeCor) ?></option>
-                                    <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </fieldset>
-                </div>    
-                <div class="modal-footer">
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button type="Submit" class="btn btn-success"><i class="bi bi-clipboard-check"></i> Salvar</button>
-                </div>
-                </div>
-                <?= $this->Form->end() ?>  
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-        </div>
         </div>
     </div>
 </div>

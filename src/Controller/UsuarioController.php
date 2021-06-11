@@ -43,17 +43,8 @@ class UsuarioController extends AppController
         }
         
     }
-    public function view($id = null)
-    {
-        $usuario = $this->Usuario->get($id, [
-            'contain' => [],
-        ]);
 
-        $this->set(compact('usuario'));
-    }
-
-    public function add($usuario)
-    {
+    public function add($usuario){
         $usuario = $this->Usuario->newEmptyEntity();
         if ($this->request->is('post')) {
             $usuario = $this->Usuario->patchEntity($usuario, $this->request->getData());
@@ -68,6 +59,18 @@ class UsuarioController extends AppController
     }
 
     public function edit($id = null){
+         // dados da tabela cores
+         $cores = new CoresController();
+         $cores = $cores->VerCores();
+         $this->set(compact('cores'));
+         // dados da tabela marcas
+         $marcas = new MarcasController();
+         $marcas = $marcas->VerMarcas();
+         $this->set(compact('marcas'));
+         // dados da tabela modelos
+         $modelos = new ModelosController();
+         $modelos = $modelos->VerModelos();
+         $this->set(compact('modelos'));
         $usuario = $this->Usuario->get($id, [
             'contain' => [],
         ]);
@@ -82,8 +85,7 @@ class UsuarioController extends AppController
         }
         $this->set(compact('usuario'));
     }
-    public function delete($id = null)
-    {
+    public function delete($id = null){
         $this->request->allowMethod(['post', 'delete']);
         $usuario = $this->Usuario->get($id);
         if ($this->Usuario->delete($usuario)) {
