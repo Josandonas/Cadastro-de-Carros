@@ -1,7 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
+
 use App\Controller\CoresController;
 use App\Controller\MarcasController;
 use App\Controller\ModelosController;
@@ -12,8 +14,9 @@ use App\Model\Entity\Usuario;
  *
  * @property \App\Model\Table\UsuarioTable $Usuario
  * @method \App\Model\Entity\Usuario[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
-*/
-class UsuarioController extends AppController{
+ */
+class UsuarioController extends AppController
+{
     public $paginate = [
         'maxLimit' => 5
     ];
@@ -31,15 +34,17 @@ class UsuarioController extends AppController{
         $modelos = $modelos->VerModelos();
         $this->set(compact('modelos'));
         //dados usuario principal
-        $usuario = $this->paginate($this->Usuario);      
-        $this->set(compact('usuario'));  
-        
+        $usuario = $this->paginate($this->Usuario);
+        $this->set(compact('usuario'));
+
         if ($this->request->is('post')) {
-            $usuario=$this->request->getData();
+            $usuario = $this->request->getData();
             $this->add($usuario);
         }
+        
     }
-    public function view($id = null){
+    public function view($id = null)
+    {
         $usuario = $this->Usuario->get($id, [
             'contain' => [],
         ]);
@@ -47,7 +52,8 @@ class UsuarioController extends AppController{
         $this->set(compact('usuario'));
     }
 
-    public function add($usuario){
+    public function add($usuario)
+    {
         $usuario = $this->Usuario->newEmptyEntity();
         if ($this->request->is('post')) {
             $usuario = $this->Usuario->patchEntity($usuario, $this->request->getData());
@@ -68,11 +74,11 @@ class UsuarioController extends AppController{
         if ($this->request->is(['patch', 'post', 'put'])) {
             $usuario = $this->Usuario->patchEntity($usuario, $this->request->getData());
             if ($this->Usuario->save($usuario)) {
-                $this->Flash->success(__('The usuario has been saved.'));
+                $this->Flash->success(__('Dados do carro alterados com sucesso.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The usuario could not be saved. Please, try again.'));
+            $this->Flash->error(__('Houve um erro ao editar os dados do carro.'));
         }
         $this->set(compact('usuario'));
     }
