@@ -4,6 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
 [![PHPStan](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
 
+[![License](https://img.shields.io/github/license/Josandonas/Cadastro-de-Carros?color=Gray&label=license&logo=MIT&logoColor=Green)](https://github.com/Josandonas/Cadastro-de-Carros/blob/master/LICENSE)
 O esqueleto da aplicação foi criado com [CakePHP](https://cakephp.org) 4.x.
 
 
