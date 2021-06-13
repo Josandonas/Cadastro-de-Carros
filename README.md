@@ -33,10 +33,21 @@ sudo apt-get install php7.4-intl
 ```bash
 sudo apt install mysql-server
 ```
-2. Defina as permissões e crie um usuario dentro usando o comando (Nese ponto sugiro o link de guia: [Guia_Criação_User_Banco](https://www.digitalocean.com/community/tutorials/como-instalar-o-mysql-no-ubuntu-18-04-pt)):
+2. Defina as permissões e crie um usuario dentro usando o comando (Nesse ponto sugiro o link de guia: [Guia_Criação_User_Banco](https://www.digitalocean.com/community/tutorials/como-instalar-o-mysql-no-ubuntu-18-04-pt)):
 ```bash
 sudo mysql_secure_installation
 ```    
+3. Após crie o banco `carros`:
+```bash
+create database carros;
+```  
+4. Depois de criar carregue o banco:
+```bash
+use carros;
+```     
+5. Abra o arquivo que está dentro da pasta ` dadosBancoCarros.txt` ou veja ele [Link_Banco_Carros](https://github.com/Josandonas/Cadastro-de-Carros/blob/master/dadosBancoCarros.txt).
+6. Copie e Cole todo o conteúdo e execute, claro estando em uso o banco `carros`.
+
 Para ver a página inicial `http://localhost/Carros/`.
 
 ## Configuração
