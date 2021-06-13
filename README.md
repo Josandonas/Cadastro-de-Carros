@@ -1,4 +1,4 @@
-# CakePHP Application Skeleton
+# CakePHP Esqueleto da Aplicação
 
 ![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
@@ -6,7 +6,10 @@
 
 O esqueleto da aplicação foi criado com [CakePHP](https://cakephp.org) 4.x.
 
-## Installation
+
+Usando o Sistema Operacional Ubuntu 20.04.2 LTS pelo qual a ISO pode ser obtida através [Ubuntu 20.4.2 LTS](https://ubuntu.com/download/desktop).
+
+## Instalação
 
 1. Faça o Download do [Composer](https://getcomposer.org/doc/00-intro.md) ou atualize ele `composer self-update`.
 2. Baixe o Xampp 7.3.28 [Xamp](https://www.apachefriends.org/pt_br/download.html).
@@ -15,17 +18,24 @@ O esqueleto da aplicação foi criado com [CakePHP](https://cakephp.org) 4.x.
 ```bash
 sudo apt-get install php7.4-intl
 ```
+## Banco de Dados
+
+### Windows
+
+1. Abra a interface gráfica do Xampp e inicialize o servidor Apache e o MySQL.
+2. Após isso dê Clique em no botão  `Admin` que está na mesma linha do MySQL.
+3. Crie um banco chamado `carros`.
+4. Abra o arquivo que está dentro da pasta ` dadosBancoCarros.txt` ou veja ele através desse link `https://github.com/Josandonas/Cadastro-de-Carros/blob/master/dadosBancoCarros.txt`.
+5. Copie e Cole todo o conteúdo e execute, claro estando em uso o banco `carros`.
+
+### Ubuntu 
+Para ver a página inicial `http://localhost/Carros/`.
+
+## Configuração
 
 
-Then visit `http://localhost:8765` to see the welcome page.
 
-## Configuration
-
-Read and edit the environment specific `config/app_local.php` and setup the 
-`'Datasources'` and any other configuration relevant for your application.
-Other environment agnostic settings can be changed in `config/app.php`.
-
-## Layout
+## O que foi utilizado no Layout
 
 The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
 framework by default. You can, however, replace it with any other library or
