@@ -6,18 +6,16 @@
 
 O esqueleto da aplicação foi criado com [CakePHP](https://cakephp.org) 4.x.
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
-
 ## Installation
 
 1. Faça o Download do [Composer](https://getcomposer.org/doc/00-intro.md) ou atualize ele `composer self-update`.
-
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
-
+2. Baixe o Xampp 7.3.28 [Xamp](https://www.apachefriends.org/pt_br/download.html).
+3. Caso seu sistema seja Linux dê este comando adicional:
+   
 ```bash
-bin/cake server -p 8765
+sudo apt-get install php7.4-intl
 ```
+
 
 Then visit `http://localhost:8765` to see the welcome page.
 
