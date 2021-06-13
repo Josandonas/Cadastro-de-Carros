@@ -37,8 +37,7 @@ $cakeDescription = 'Página de Cadastro de Carros';
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ">
-                            <li></li>
+                        <ul class="navbar-nav" align="end">
                             <li class="nav-item dropdown">
                                 <a class="nav-link  active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Relatórios <i class="bi bi-file-text" style="font-size: 25px;"></i>

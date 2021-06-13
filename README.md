@@ -10,7 +10,7 @@ The framework source code can be found here: [cakephp/cakephp](https://github.co
 
 ## Installation
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
+1. Faça o Download do [Composer](https://getcomposer.org/doc/00-intro.md) ou atualize ele `composer self-update`.
 
 You can now either use your machine's webserver to view the default home page, or start
 up the built-in webserver with:
