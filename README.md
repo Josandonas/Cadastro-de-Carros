@@ -70,9 +70,25 @@ sudo /opt/lampp/xampp start
 > ```bash
 > cd ..
 > ``` 
-> 
+> Após isso você terá antecedido uma pasta estando aqui: `/opt/lampp/ ` logo em seguida execute:
+> ```bash
+> sudo su 
+> ``` 
+> Insira sua senha como super usuário e execute o comando que dará permissão para colar a pasta dentro do htdocs:
+> ```bash
+> chmod 777 htdocs/
+> ``` 
+4. Abra qualquer navegador e insira o link nele:
+```bash
+http://localhost/Carros/
+```   
+
 ## O que foi utilizado no Layout
 
-The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
+* O esqueleto da aplicação usa [Milligram](https://milligram.io/) (v1.3) minimalist CSS
+* Bootstrap Versão 5.0 [Documentação_Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+* Bootstrap Icons Versão 1.4.0 [Documentação_BootstrapIcons](https://icons.getbootstrap.com)
+
+## Autor
+
+* **José Sandonas** - *Developer Full Stack* - [git Josandonas](https://github.com/Josandonas)
