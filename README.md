@@ -7,7 +7,7 @@
 O esqueleto da aplicação foi criado com [CakePHP](https://cakephp.org) 4.x.
 
 
-Usando o Sistema Operacional Ubuntu 20.04.2 LTS pelo qual a ISO pode ser obtida através [Ubuntu 20.4.2 LTS](https://ubuntu.com/download/desktop).
+Usando o Sistema Operacional [Ubuntu 20.4.2 LTS](https://ubuntu.com/download/desktop).
 
 ## Instalação
 
@@ -22,11 +22,11 @@ sudo apt-get install php7.4-intl
 
 ### Windows
 
-1. Abra a interface gráfica do Xampp e inicialize o servidor Apache e o MySQL.
-2. Após isso dê Clique em no botão  `Admin` que está na mesma linha do MySQL.
-3. Crie um banco chamado `carros`.
-4. Abra o arquivo que está dentro da pasta ` dadosBancoCarros.txt` ou veja ele através desse link `https://github.com/Josandonas/Cadastro-de-Carros/blob/master/dadosBancoCarros.txt`.
-5. Copie e Cole todo o conteúdo e execute, claro estando em uso o banco `carros`.
+> 1. Abra a interface gráfica do Xampp e inicialize o servidor Apache e o MySQL.
+> 2. Após isso dê Clique em no botão  `Admin` que está na mesma linha do MySQL.
+> 3. Crie um banco chamado `carros`.
+> 4. Abra o arquivo que está dentro da pasta ` dadosBancoCarros.txt` ou veja ele [Link_Banco_Carros](https://github.com/Josandonas/Cadastro-de-Carros/blob/master/dadosBancoCarros.txt).
+> 5. Copie e Cole todo o conteúdo e execute, claro estando em uso o banco `carros`.
 
 ### Ubuntu 
 Para ver a página inicial `http://localhost/Carros/`.
