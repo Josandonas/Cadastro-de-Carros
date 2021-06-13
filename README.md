@@ -48,7 +48,6 @@ use carros;
 5. Abra o arquivo que está dentro da pasta ` dadosBancoCarros.txt` ou veja ele [Link_Banco_Carros](https://github.com/Josandonas/Cadastro-de-Carros/blob/master/dadosBancoCarros.txt).
 6. Copie e Cole todo o conteúdo e execute, claro estando em uso o banco `carros`.
 
-Para ver a página inicial `http://localhost/Carros/`.
 
 ## Configuração
 
