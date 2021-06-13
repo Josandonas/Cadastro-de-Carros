@@ -1,4 +1,4 @@
-# CakePHP Esqueleto da Aplicação
+# Aplicação feita em CakePHP
 
 ![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
@@ -52,6 +52,9 @@ Para ver a página inicial `http://localhost/Carros/`.
 
 ## Configuração
 
+#### Windows
+
+Copie e cole a pasta toda dentro do seguinte caminho: /opt/lampp/htdocs/
 
 
 ## O que foi utilizado no Layout
