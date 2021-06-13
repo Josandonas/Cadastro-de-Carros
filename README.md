@@ -54,9 +54,23 @@ Para ver a página inicial `http://localhost/Carros/`.
 
 #### Windows
 
-Copie e cole a pasta toda dentro do seguinte caminho: /opt/lampp/htdocs/
+1. Copie e cole a pasta toda dentro do seguinte caminho: `C:\xampp\htdocs\`
+2. Abra qualquer navegador e insira o link nele:
+```bash
+http://localhost/Carros/
+```     
+#### Ubuntu
 
-
+1. Copie e cole a pasta toda para dentro do caminho: `/opt/lampp/htdocs/`
+2. Não esqueça de antes inicializar o Xampp
+```bash
+sudo /opt/lampp/xampp start
+```    
+3. Caso não consiga copiar a pasta e colar dentro do htdocs use o seguintes comandos no terminal:
+> ```bash
+> cd ..
+> ``` 
+> 
 ## O que foi utilizado no Layout
 
 The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
