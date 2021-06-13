@@ -7,7 +7,7 @@
 O esqueleto da aplicação foi criado com [CakePHP](https://cakephp.org) 4.x.
 
 
-Usando o Sistema Operacional [Ubuntu 20.4.2 LTS](https://ubuntu.com/download/desktop).
+Usou-se o sistema operacional [Ubuntu 20.4.2 LTS](https://ubuntu.com/download/desktop).
 
 ## Instalação
 
@@ -20,15 +20,23 @@ sudo apt-get install php7.4-intl
 ```
 ## Banco de Dados
 
-### Windows
+#### Windows
 
-> 1. Abra a interface gráfica do Xampp e inicialize o servidor Apache e o MySQL.
-> 2. Após isso dê Clique em no botão  `Admin` que está na mesma linha do MySQL.
-> 3. Crie um banco chamado `carros`.
-> 4. Abra o arquivo que está dentro da pasta ` dadosBancoCarros.txt` ou veja ele [Link_Banco_Carros](https://github.com/Josandonas/Cadastro-de-Carros/blob/master/dadosBancoCarros.txt).
-> 5. Copie e Cole todo o conteúdo e execute, claro estando em uso o banco `carros`.
+1. Abra a interface gráfica do Xampp e inicialize o servidor Apache e o MySQL.
+2. Após isso dê Clique em no botão  `Admin` que está na mesma linha do MySQL.
+3. Crie um banco chamado `carros`.
+4. Abra o arquivo que está dentro da pasta ` dadosBancoCarros.txt` ou veja ele [Link_Banco_Carros](https://github.com/Josandonas/Cadastro-de-Carros/blob/master/dadosBancoCarros.txt).
+5. Copie e Cole todo o conteúdo e execute, claro estando em uso o banco `carros`.
 
-### Ubuntu 
+#### Ubuntu 
+1. Faça o Download do MySQL Server pelo comando no terminal: 
+```bash
+sudo apt install mysql-server
+```
+2. Defina as permissões e crie um usuario dentro usando o comando (Nese ponto sugiro o link de guia: [Guia_Criação_User_Banco](https://www.digitalocean.com/community/tutorials/como-instalar-o-mysql-no-ubuntu-18-04-pt)):
+```bash
+sudo mysql_secure_installation
+```    
 Para ver a página inicial `http://localhost/Carros/`.
 
 ## Configuração
