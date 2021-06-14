@@ -88,24 +88,21 @@ $cakeDescription = 'Página de Cadastro de Carros';
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="/img/antiguidade.jpg" class="d-block w-100" alt="CakePHP">
+                    <?echo $this->Html->image("antiguidade.jpg", ['fullBase' => true]);?>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5>Slide 1</h5>
                     </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <?echo $this->Html->image("lamborguini-laranja.jpg", ['fullBase' => true]);?>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h5>Slide 2</h5>
                     </div>
                     </div>
                     <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <?echo $this->Html->image("mostraCarros.jpg", ['fullBase' => true]);?>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <h5>Slide 3</h5>
                     </div>
                     </div>
                 </div>
