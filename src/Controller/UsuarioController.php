@@ -7,7 +7,6 @@ namespace App\Controller;
 use App\Controller\CoresController;
 use App\Controller\MarcasController;
 use App\Controller\ModelosController;
-use App\Model\Entity\Usuario;
 
 /**
  * Usuario Controller

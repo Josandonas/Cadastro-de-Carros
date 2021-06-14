@@ -1,0 +1,25 @@
+.html,body{
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#container {
+    min-height: 100% !important;
+    height: 100% !important;
+}
+#principal{
+    background: url("../img/principal.jpg") no-repeat center center fixed;
+     /* Full height */
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
+#edicao{
+    background: url("../img/editar.jpg") no-repeat center center fixed;
+     /* Full height */
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
