@@ -95,4 +95,7 @@ class UsuarioController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    public function sobre(){
+        
+    }
 }
