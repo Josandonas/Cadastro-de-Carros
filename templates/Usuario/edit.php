@@ -46,6 +46,9 @@ $cakeDescription = 'Edição';
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="http://localhost/Carros/pages/home">Estado da Aplicação <i class="bi bi-wrench"style="font-size: 25px;"></i></a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="http://localhost/Carros/Usuario/sobre">Sobre <i class="bi bi-info-circle" style="font-size: 26px;"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>

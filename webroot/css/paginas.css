@@ -23,3 +23,11 @@
      -o-background-size: cover;
      background-size: cover;
 }
+#edicao{
+    background: url("../img/sobre.jpg") no-repeat center center fixed;
+     /* Full height */
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
