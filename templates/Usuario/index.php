@@ -89,11 +89,11 @@ $cakeDescription = 'Página de Cadastro de Carros';
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                         <div class="modal-content">
                                             <div class="modal-header row">
-                                                <div class="col-6" style="padding-top: 13px;">
+                                                <div class="col-6 d-flex justify-content-start" style="padding-top: 13px;">
                                                     <h5>Aviso <i class="bi bi-exclamation-triangle"></i></h5>
                                                 </div> 
-                                                <div class="col-6">
-                                                    <div class="d-flex justify-content-end"style="padding: 0.25em 1.25em !important;"> <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="bi bi-x-lg"></i></button></div>
+                                                <div class="col-6 d-flex justify-content-end" style="padding: 0.25em 1.25em !important;">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="bi bi-x-lg"></i></button>
                                                 </div>
                                             </div>
                                             <br>
