@@ -77,7 +77,7 @@ sudo /opt/lampp/xampp start
 > ``` 
 > Insira sua senha como super usuário e execute o comando que dará permissão para colar a pasta dentro do htdocs:
 > ```bash
-> chmod 777 htdocs/
+> chmod 755 htdocs/
 > ``` 
 4. Abra qualquer navegador e insira o link nele:
 ```bash
